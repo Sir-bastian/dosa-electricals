@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dosmac Electrical | Solar, Wiring &amp; AC — Harare &amp; Chitungwiza, Zimbabwe</title>
+
+  <meta name="description"
+        content="Harare's registered, trade-tested electrical contractors. Solar systems, house wiring, 
+        industrial power &amp; AC installations. Reliable. Certified. Call now." />
+
+  <meta name="keywords"
+        content="electrician Harare, solar installation Zimbabwe, house wiring Harare, electrical 
+        contractor Zimbabwe, AC installation Harare, Chitungwiza electrician, load shedding backup, 
+        ZESA alternative, DB board upgrade" />
+
+  <meta name="robots"     content="index, follow" />
+  <!-- theme-color: colours the browser bar on Android Chrome to match brand -->
+  <meta name="theme-color" content="#1A1A1A" />
+
+  <meta property="og:title" content="Dosmac Electrical — Powering Zimbabwe Right" />
+  <meta property="og:description"content="Trade-tested solar, wiring, industrial power &amp; AC. Harare &amp; Chitungwiza. Get a free quote today." />
+  <meta property="og:image" content="assets/images/portfolio-solar-team-rooftop.jpg" />
+  <meta property="og:url" content="https://www.dosmac.co.zw" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dosmac Electrical" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"/>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+</head>
+
+<body>
+
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container navbar__inner">
+
+      <!-- Logo: clicking jumps back to top of page (#home) -->
+      <a href="#home" class="navbar__logo" aria-label="Dosmac Electrical — go to top">
+        <span class="logo--blue">DOSMAC</span><span class="logo--orange">ELECTRICAL</span>
+      </a>
+
+      <!-- Desktop nav links — hidden on screens ≤ 1024px via CSS -->
+      <nav class="navbar__links" role="navigation" aria-label="Main navigation">
+        <a href="#services"     class="nav-link">Services</a>
+        <a href="#why-dosmac"   class="nav-link">Why Dosmac</a>
+        <a href="#portfolio"    class="nav-link">Our Work</a>
+        <a href="#testimonials" class="nav-link">Clients</a>
+        <a href="#contact"      class="btn btn--primary btn--sm nav-cta">Get a Quote</a>
+      </nav>
+
+      <!-- Hamburger — visible on mobile. JS toggles .is-open on this
+           button and on #mobileMenu. aria-expanded updated by JS. -->
+      <button class="navbar__hamburger"
+              id="navToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </div><!-- /.navbar__inner -->
+
+    <!-- Mobile dropdown — slides open when hamburger is clicked -->
+    <nav class="navbar__mobile-menu"
+         id="mobileMenu"
+         aria-hidden="true"
+         aria-label="Mobile navigation">
+      <a href="#services"     class="mobile-nav-link">Services</a>
+      <a href="#why-dosmac"   class="mobile-nav-link">Why Dosmac</a>
+      <a href="#portfolio"    class="mobile-nav-link">Our Work</a>
+      <a href="#testimonials" class="mobile-nav-link">Clients</a>
+      <a href="#contact"      class="mobile-nav-link mobile-nav-cta">Get a Quote →</a>
+    </nav>
+
+  </header><!-- /navbar -->
+
+
+  <!-- SECTION 1 - HERO -->
+  <section class="hero" id="home" aria-label="Dosmac Electrical introduction">
+
+    <!-- Gradient overlay — between background image and text.
+         Darkness controlled via opacity in .hero__overlay CSS rule. -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+
+      <!-- Eyebrow: small uppercase label above main headline -->
+      <p class="section-eyebrow hero__eyebrow">Registered Electrical Contractors — Zimbabwe</p>
+
+      <!-- Main headline — addresses Zimbabwe's #1 electrical pain point -->
+      <h1 class="hero__headline">
+        Dosmac Electrical<br />
+        <span class="text--orange">Expert Wiring. Flawless Power. No Compromises.</span>
+      </h1>
+
+      <!-- Subtext — expands headline, names all 3 key services + areas -->
+      <p class="hero__subtext">
+        Precision in every wire. Perfection in every circuit. Whether it's heavy-duty 
+        commercial tubing or smart home automation, we provide  the elite electrical foundation your
+         property requires. Don't just build, FUTURE-PROOF.
+      </p>
+
+      <!-- Trust Badges — 4 pills in a 2×2 grid (CSS grid on mobile).
+           Quick visual proof-points before the user reads any copy. -->
+      <div class="hero__trust-bar" role="list" aria-label="Key credentials">
+        <span class="trust-badge" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Residential & Commercial Wiring
+        </span>
+        <span class="trust-badge" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> AC Installation & Control
+        </span>
+        <span class="trust-badge" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Automation
+        </span>
+        <span class="trust-badge" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Fault Finding & Repairs
+        </span>
+      </div>
+
+      <!-- CTA pair — Primary (form) + WhatsApp (direct chat).
+           On mobile these stack full-width vertically (CSS).
+           WhatsApp URL pre-fills a message template in the chat. -->
+      <div class="hero__cta-group">
+
+        <a href="#contact" class="btn btn--primary btn--lg">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          Get a Free Quote
+        </a>
+
+
+        <a href="https://wa.me/263717675763?text=Hi%20Dosmac!%20I%20need%20a%20quote%20for%20electrical%20work%20at%20my%20property."
+           class="btn btn--whatsapp btn--lg"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open WhatsApp chat with Dosmac">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          WhatsApp Us Now
+        </a>
+
+      </div><!-- /.hero__cta-group -->
+
+    </div><!-- /.hero__content -->
+
+    <!-- Bouncing scroll indicator arrow — CSS @keyframes bounce animation.
+         Hidden on very short screens via CSS. -->
+    <a href="#stats" class="hero__scroll-indicator" aria-label="Scroll down">
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </a>
+
+  </section><!-- /#home -->
+
+
+  <!-- SECTION 2 - STATS -->
+  <section class="stats-bar" id="stats" aria-label="Company statistics">
+    <div class="container stats-bar__grid">
+
+      <div class="stat-item">
+        <div class="stat-item__value">
+          <span class="stat-item__number" data-target="75">0</span>
+          <span class="stat-item__suffix" aria-hidden="true">+</span>
+        </div>
+        <p class="stat-item__label">Projects Completed</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-item__value">
+          <span class="stat-item__number" data-target="8">0</span>
+          <span class="stat-item__suffix" aria-hidden="true">+</span>
+        </div>
+        <p class="stat-item__label">Years Experience</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-item__value">
+          <span class="stat-item__number" data-target="100">0</span>
+          <span class="stat-item__suffix" aria-hidden="true">%</span>
+        </div>
+        <p class="stat-item__label">Registered &amp; Certified</p>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-item__value">
+          <span class="stat-item__number" data-target="24">0</span>
+          <span class="stat-item__suffix" aria-hidden="true">/7</span>
+        </div>
+        <p class="stat-item__label">Emergency Response</p>
+      </div>
+
+    </div>
+  </section><!-- /#stats -->
+
+
+  <!-- SECTION 3 - SERVICES-->
+  <section class="services" id="services" aria-label="Dosmac services">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow">WHAT WE DO</p>
+        <h2 class="section-title">
+          Every Wire. Every Panel.<br />
+          <span class="text--orange">Done Right the First Time.</span>
+        </h2>
+        <p class="section-subtitle">
+          We bring industrial-grade discipline to every residential solar install,
+          DB board upgrade, and lighting fit-out we touch.
+        </p>
+      </header>
+
+      <div class="services__grid">
+
+        <!-- SERVICE: Residential Wiring -->
+        <article class="service-card" aria-label="Residential wiring service">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">
+            <i class="fa-solid fa-house-chimney"></i>
+          </div>
+          <h3 class="service-card__title">Safe, Legal House Wiring — Done to Code</h3>
+          <p class="service-card__desc">
+            From new builds to full rewires, we install systems that pass
+            inspection, protect your family, and last for decades.
+          </p>
+          <ul class="service-card__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> New home wiring — slab to switchboard</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Rewiring of old or dangerous systems</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> DB board upgrades &amp; replacements</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Fault finding &amp; circuit repairs</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline btn--sm service-card__cta">
+            Get a Wiring Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <!-- SERVICE: Solar (FEATURED — orange border, badge) -->
+        <article class="service-card service-card--featured" aria-label="Solar installation service">
+          <div class="service-card__badge" aria-label="Most popular service">Most Popular</div>
+          <div class="service-card__icon service-card__icon--orange" aria-hidden="true">
+            <i class="fa-solid fa-solar-panel"></i>
+          </div>
+          <h3 class="service-card__title">Stop Paying for Power You Don't Have</h3>
+          <p class="service-card__desc">
+            Full solar systems designed for Zimbabwe's grid — panels, inverters,
+            batteries — installed by people who understand local conditions.
+          </p>
+          <ul class="service-card__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Residential off-grid &amp; hybrid solar</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Commercial solar with battery backup</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Solis, Victron &amp; leading inverter brands</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Post-install support &amp; monitoring</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--sm service-card__cta">
+            Get a Solar Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <!-- SERVICE: Industrial Power -->
+        <article class="service-card" aria-label="Industrial electrical service">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <h3 class="service-card__title">Industrial Electrical That Meets the Standard</h3>
+          <p class="service-card__desc">
+            Factories, warehouses and commercial sites need electricians who
+            understand 3-phase systems, high-voltage panels, and safety compliance.
+          </p>
+          <ul class="service-card__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 3-phase installation &amp; commissioning</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Switchgear, MCCs &amp; distribution panels</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Underground cable laying &amp; civil works</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Compliance inspections &amp; certification</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline btn--sm service-card__cta">
+            Discuss Your Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <!-- SERVICE: Lighting & AC -->
+        <article class="service-card" aria-label="Lighting and AC installation service">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="service-card__title">Lighting &amp; AC Installed Properly — Lasts Longer</h3>
+          <p class="service-card__desc">
+            From LED feature lighting to full AC systems — wired correctly with
+            dedicated circuits and proper breakers so it runs safely for years.
+          </p>
+          <ul class="service-card__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Recessed LEDs, backlit mirrors, feature lighting</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Exterior architectural &amp; estate lighting</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Split unit &amp; multi-split AC installation</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> AC servicing, gas top-up &amp; fault repair</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline btn--sm service-card__cta">
+            Get a Lighting/AC Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+      </div><!-- /.services__grid -->
+    </div>
+  </section><!-- /#services -->
+
+
+  <!-- SECTION 4 - WHY DOSMAC ? -->
+  <section class="why-dosmac" id="why-dosmac" aria-label="Why choose Dosmac Electrical">
+    <div class="container why-dosmac__inner">
+
+      <!-- LEFT: Real team photo with QC badge overlaid at bottom-right -->
+      <div class="why-dosmac__image-col">
+        <div class="why-dosmac__img-wrapper">
+          <!--
+            REAL DOSMAC PHOTO: Two-man team on corrugated rooftop,
+            commissioning solar array installation. Harare hills visible.
+            Photo taken during active job — authentic credibility signal.
+          -->
+          <img
+            src="assets/images/about-team-solar-install.jpg"
+            alt="Dosmac two-man team commissioning a rooftop solar installation in Harare, Zimbabwe"
+            class="why-dosmac__img"
+            loading="lazy"
+            width="600"
+            height="700" />
+
+          <!-- QC badge: positioned absolute (bottom-right) over the image -->
+          <div class="why-dosmac__badge" aria-label="Quality certified">
+            <span class="badge__label">QC</span>
+            <span class="badge__sub">CERTIFIED QUALITY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Copy + 4 trust pillars + CTA -->
+      <div class="why-dosmac__copy-col">
+
+        <p class="section-eyebrow">THE DOSMAC DIFFERENCE</p>
+        <h2 class="section-title">
+          Most Electricians Know How to Wire.<br />
+          <span class="text--orange">We Know Why Every Connection Matters.</span>
+        </h2>
+
+        <p class="body-text">
+          Dosmac was built on a simple belief: electrical work done poorly
+          is not just inconvenient — it is dangerous. We are trade-tested artisans
+          who started on complex industrial infrastructure where there is no margin for error.
+        </p>
+        <p class="body-text">
+          That same rigour follows us into every residential solar install, every DB board
+          upgrade, and every light fitting we connect. When you hire Dosmac, you get the
+          standard a factory floor demands — applied to your home or business.
+        </p>
+
+        <!-- Trust Pillars: icon + heading + short description -->
+        <div class="trust-pillars">
+
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <div class="trust-pillar__copy">
+              <h4>Trade-Tested &amp; Registered</h4>
+              <p>Formal trade certification. Registered contractors. We work to code — every time.</p>
+            </div>
+          </div>
+
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div class="trust-pillar__copy">
+              <h4>Hands-On Technical Depth</h4>
+              <p>Industrial switchgear to residential solar. Our team has wired, tested and fixed it all.</p>
+            </div>
+          </div>
+
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="trust-pillar__copy">
+              <h4>Safety-First, Always</h4>
+              <p>No shortcuts that put your family at risk. Every install is fully tested before we leave.</p>
+            </div>
+          </div>
+
+          <div class="trust-pillar">
+            <div class="trust-pillar__icon" aria-hidden="true">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="trust-pillar__copy">
+              <h4>Local, Reliable, Responsive</h4>
+              <p>Based in Chitungwiza, serving all of Harare. We know the grid, the suppliers, the conditions.</p>
+            </div>
+          </div>
+
+        </div><!-- /.trust-pillars -->
+
+        <a href="#portfolio" class="btn btn--primary btn--md">
+          See Our Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+      </div><!-- /.why-dosmac__copy-col -->
+    </div>
+  </section><!-- /#why-dosmac -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  SECTION 5: TESTIMONIALS                                ║
+       ╠══════════════════════════════════════════════════════════╣
+       ║  3 client quote cards.                                  ║
+       ║  [EDIT-QUOTE] Replace ALL placeholder text below with   ║
+       ║  real client quotes. How to get them: WhatsApp your     ║
+       ║  best 5 clients and ask: "What was the job? What        ║
+       ║  impressed you most? Can I quote you on our website?"   ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="testimonials" id="testimonials" aria-label="Client testimonials">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow">WHAT OUR CLIENTS SAY</p>
+        <h2 class="section-title">
+          Real Projects. <span class="text--orange">Real Results.</span>
+        </h2>
+      </header>
+
+      <div class="testimonials__grid">
+
+        <!-- TESTIMONIAL 1 — [EDIT-QUOTE] Replace with real client words -->
+        <article class="testimonial-card" aria-label="Client testimonial">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote class="testimonial-card__quote">
+            "Dosmac installed our 5kW solar system in two days — clean work, no mess,
+            and they explained everything. Our electricity costs are basically zero now."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <!-- Avatar circle: initials styled in CSS as a branded circle -->
+            <div class="testimonial-card__avatar" aria-hidden="true">T</div>
+            <div>
+              <p class="testimonial-card__name">Tendai M.</p>
+              <p class="testimonial-card__detail">Borrowdale, Harare — Solar Install</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- TESTIMONIAL 2 — [EDIT-QUOTE] -->
+        <article class="testimonial-card" aria-label="Client testimonial">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote class="testimonial-card__quote">
+            "Dosmac assessed our factory within 24 hours, gave a fair price, and had us
+            back online within the week. Two other contractors couldn't start for months."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-hidden="true">F</div>
+            <div>
+              <p class="testimonial-card__name">Farai K.</p>
+              <p class="testimonial-card__detail">Msasa Industrial, Harare — Factory Rewire</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- TESTIMONIAL 3 — [EDIT-QUOTE] -->
+        <article class="testimonial-card" aria-label="Client testimonial">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+          </div>
+          <blockquote class="testimonial-card__quote">
+            "The DB board in our new house was a hazard. Dosmac replaced everything,
+            labelled every circuit, installed surge protection. I sleep better now."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-hidden="true">R</div>
+            <div>
+              <p class="testimonial-card__name">Rutendo N.</p>
+              <p class="testimonial-card__detail">Chitungwiza — DB Board Upgrade</p>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.testimonials__grid -->
+    </div>
+  </section><!-- /#testimonials -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  SECTION 6: PORTFOLIO                                   ║
+       ╠══════════════════════════════════════════════════════════╣
+       ║  12 REAL Dosmac project photos — zero stock images.     ║
+       ║                                                          ║
+       ║  Filter tabs control visible items via data-category.   ║
+       ║  JS function: filterPortfolio() in main.js              ║
+       ║                                                          ║
+       ║  IMAGE MANIFEST (filename → what it shows)              ║
+       ║  hero-industrial-panel.jpg     → artisan, 400V Hager    ║
+       ║  about-team-solar-install.jpg  → team, rooftop solar    ║
+       ║  portfolio-solar-red-roof.jpg  → 8 panels, red tiles    ║
+       ║  portfolio-solar-team-rooftop.jpg → team commissioning  ║
+       ║  portfolio-solar-golden-hour.jpg  → corrugated roof     ║
+       ║  portfolio-solis-inverter-system.jpg → Solis cabinet    ║
+       ║  portfolio-mppt-battery-setup.jpg  → MPPT + Leoch       ║
+       ║  portfolio-industrial-400v-panel.jpg → Hager switchgear ║
+       ║  portfolio-bathroom-led-mirrors.jpg → LED mirrors        ║
+       ║  portfolio-recessed-downlights.jpg  → 20× downlights    ║
+       ║  portfolio-exterior-wall-lights.jpg → sconces, night    ║
+       ║  portfolio-estate-street-lighting.jpg → estate, dusk    ║
+       ║  portfolio-underground-cable-1.jpg  → trench, tape      ║
+       ║  portfolio-luxury-kitchen.jpg  → matte kitchen fit-out  ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="portfolio" id="portfolio" aria-label="Portfolio of completed projects">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow">OUR WORK IN THE FIELD</p>
+        <h2 class="section-title">
+          Precision <span class="text--orange">You Can See.</span>
+        </h2>
+        <p class="section-subtitle">
+          Every image below is a real Dosmac project. No stock photos.
+          This is what we build — and what we stand behind.
+        </p>
+      </header>
+
+      <!-- Filter tabs — JS reads data-filter, hides/shows items with matching data-category -->
+      <div class="portfolio__tabs" role="tablist" aria-label="Filter projects by type">
+        <button class="portfolio-tab portfolio-tab--active" data-filter="all"            role="tab" aria-selected="true">All Work</button>
+        <button class="portfolio-tab"                       data-filter="solar"          role="tab" aria-selected="false">Solar</button>
+        <button class="portfolio-tab"                       data-filter="systems"        role="tab" aria-selected="false">Inverter Systems</button>
+        <button class="portfolio-tab"                       data-filter="industrial"     role="tab" aria-selected="false">Industrial</button>
+        <button class="portfolio-tab"                       data-filter="lighting"       role="tab" aria-selected="false">Lighting</button>
+        <button class="portfolio-tab"                       data-filter="infrastructure" role="tab" aria-selected="false">Infrastructure</button>
+        <button class="portfolio-tab"                       data-filter="residential"    role="tab" aria-selected="false">Residential</button>
+      </div>
+
+      <!-- Portfolio grid: 3-col desktop → 2-col tablet → 1-col mobile -->
+      <div class="portfolio__grid">
+
+        <!-- ── SOLAR: 8-panel array, red concrete tile roof ─────────────── -->
+        <article class="portfolio-item" data-category="solar">
+          <img src="assets/images/portfolio-solar-red-roof.jpg"
+               alt="8-panel monocrystalline solar array on red tiled residential roof, Harare"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Solar</span>
+            <p class="portfolio-item__caption">8× 550W Mono Array — Residential Harare. Hybrid system, grid-tie ready.</p>
+          </div>
+        </article>
+
+        <!-- ── SOLAR: Two-man team on commercial rooftop ─────────────────── -->
+        <article class="portfolio-item" data-category="solar">
+          <img src="assets/images/portfolio-solar-team-rooftop.jpg"
+               alt="Dosmac two-man team commissioning large solar array on commercial rooftop, Harare hills in background"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Solar</span>
+            <p class="portfolio-item__caption">10-Panel Commercial Install — Team commissioning. Solis inverter, full handover.</p>
+          </div>
+        </article>
+
+        <!-- ── SOLAR: Corrugated iron roof at golden hour ─────────────────── -->
+        <article class="portfolio-item" data-category="solar">
+          <img src="assets/images/portfolio-solar-golden-hour.jpg"
+               alt="Solar panels being commissioned on corrugated iron roof at golden hour, Zimbabwe hills behind"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Solar</span>
+            <p class="portfolio-item__caption">8-Panel Corrugated Roof — Sunset commissioning. Correct pitch, full testing.</p>
+          </div>
+        </article>
+
+        <!-- ── SYSTEMS: Solis inverter + VA battery in weatherproof cabinet ── -->
+        <article class="portfolio-item" data-category="systems">
+          <img src="assets/images/portfolio-solis-inverter-system.jpg"
+               alt="Solis hybrid inverter with VA LiFePO4 battery bank in outdoor weatherproof steel enclosure"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Inverter Systems</span>
+            <p class="portfolio-item__caption">Solis Hybrid + VA LiFePO4 Battery. Outdoor weatherproof cabinet. Commercial install.</p>
+          </div>
+        </article>
+
+        <!-- ── SYSTEMS: MPPT charger + Leoch battery + DC combiner box ──────── -->
+        <article class="portfolio-item" data-category="systems">
+          <img src="assets/images/portfolio-mppt-battery-setup.jpg"
+               alt="Hands wiring DC combiner box with MPPT solar charger above and Leoch battery below"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Inverter Systems</span>
+            <p class="portfolio-item__caption">MPPT + Leoch Battery + DC Combiner. Surge protection, isolators, voltage monitoring.</p>
+          </div>
+        </article>
+
+        <!-- ── INDUSTRIAL: Artisan in PPE at 400V Hager switchgear ──────────── -->
+        <article class="portfolio-item" data-category="industrial">
+          <img src="assets/images/portfolio-industrial-400v-panel.jpg"
+               alt="Dosmac trade-tested artisan in red overalls and hard hat working on 400V Hager industrial switchgear"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Industrial</span>
+            <p class="portfolio-item__caption">400V Hager Industrial Switchgear. Full PPE. Multiple armoured cable feeds.</p>
+          </div>
+        </article>
+
+        <!-- ── LIGHTING: Dual LED backlit mirrors, luxury en-suite ────────── -->
+        <article class="portfolio-item" data-category="lighting">
+          <img src="assets/images/portfolio-bathroom-led-mirrors.jpg"
+               alt="Dual round LED backlit bathroom mirrors with warm glow, marble vanity and herringbone tiles"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Lighting</span>
+            <p class="portfolio-item__caption">Dual LED Backlit Mirrors — Luxury en-suite. Touch sensor, warm white, dedicated circuit.</p>
+          </div>
+        </article>
+
+        <!-- ── LIGHTING: 20 recessed downlights, open-plan vaulted ceiling ── -->
+        <article class="portfolio-item" data-category="lighting">
+          <img src="assets/images/portfolio-recessed-downlights.jpg"
+               alt="20 recessed LED downlights glowing in large vaulted open-plan living room at night"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Lighting</span>
+            <p class="portfolio-item__caption">20× Recessed LEDs — Open-plan living. Full circuit wiring. Pendant prep. Dimmer-ready.</p>
+          </div>
+        </article>
+
+        <!-- ── LIGHTING: Exterior up/down sconces on new build ─────────────── -->
+        <article class="portfolio-item" data-category="lighting">
+          <img src="assets/images/portfolio-exterior-wall-lights.jpg"
+               alt="Exterior up-down wall sconces glowing on rendered wall of new residential build at night"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Lighting</span>
+            <p class="portfolio-item__caption">Exterior Architectural Sconces — New residential build. IP-rated, beautiful night finish.</p>
+          </div>
+        </article>
+
+        <!-- ── LIGHTING: Completed estate street lighting at dusk ─────────── -->
+        <article class="portfolio-item" data-category="lighting">
+          <img src="assets/images/portfolio-estate-street-lighting.jpg"
+               alt="Completed housing estate street lighting glowing at dusk — Zimbabwe residential development"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Lighting</span>
+            <p class="portfolio-item__caption">Housing Estate Street Lighting — Full site. Underground feed, pole install, CHNT breakers.</p>
+          </div>
+        </article>
+
+        <!-- ── INFRASTRUCTURE: Underground armoured cable in trench ───────── -->
+        <article class="portfolio-item" data-category="infrastructure">
+          <img src="assets/images/portfolio-underground-cable-1.jpg"
+               alt="Underground armoured electrical cable laid in long straight trench with yellow warning tape, red Zimbabwe soil"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Infrastructure</span>
+            <p class="portfolio-item__caption">Underground Armoured Cable — Housing estate. Correct depth, warning tape, full-length run.</p>
+          </div>
+        </article>
+
+        <!-- ── RESIDENTIAL: Luxury kitchen electrical fit-out ────────────── -->
+        <article class="portfolio-item" data-category="residential">
+          <img src="assets/images/portfolio-luxury-kitchen.jpg"
+               alt="Full electrical fit-out of luxury kitchen with dark matte cabinetry, marble countertops and integrated appliances"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">Residential</span>
+            <p class="portfolio-item__caption">Full Kitchen Electrical — Luxury residence Harare. Appliance circuits, under-cabinet, extractor.</p>
+          </div>
+        </article>
+
+      </div><!-- /.portfolio__grid -->
+    </div>
+  </section><!-- /#portfolio -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  SECTION 7: CONTACT & QUOTE FORM                        ║
+       ╠══════════════════════════════════════════════════════════╣
+       ║  Two-column: form (left) + direct contact info (right). ║
+       ║                                                          ║
+       ║  FORM SUBMISSION SETUP:                                  ║
+       ║  The form currently falls back to WhatsApp (always       ║
+       ║  works). To add email delivery:                          ║
+       ║  1. Sign up at https://formspree.io (free tier: 50/mo)  ║
+       ║  2. Create a form, get your endpoint URL                 ║
+       ║  3. In main.js, set: CONFIG.FORM_ACTION_URL = 'url'     ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="contact" id="contact" aria-label="Contact and quote request">
+    <div class="container contact__inner">
+
+      <!-- LEFT: Quote form -->
+      <div class="contact__form-col">
+
+        <p class="section-eyebrow">LET'S TALK</p>
+        <h2 class="section-title">
+          Ready to Fix It Right?<br />
+          <span class="text--orange">We Reply Within an Hour.</span>
+        </h2>
+        <p class="body-text">
+          No call-centre runaround. You speak directly to a qualified artisan
+          who has actually done the work.
+        </p>
+
+        <!-- Form: novalidate disables browser default error bubbles.
+             JS handles all validation in main.js → validateForm() -->
+        <form class="contact-form" id="contactForm" action="#" method="POST" novalidate>
+
+          <!-- Row 1: Name + Phone -->
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="clientName" class="form-label">Your Name *</label>
+              <input type="text" id="clientName" name="name" class="form-input"
+                     placeholder="e.g. Tendai Moyo" required autocomplete="name" />
+              <!-- Error span: JS sets textContent and shows via CSS -->
+              <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone" class="form-label">Phone Number *</label>
+              <input type="tel" id="clientPhone" name="phone" class="form-input"
+                     placeholder="e.g. +263 77 123 4567" required autocomplete="tel" />
+              <span class="form-error" id="phoneError" role="alert" aria-live="polite"></span>
+            </div>
+
+          </div><!-- /.form-row -->
+
+          <!-- Row 2: Service type + Area -->
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="serviceType" class="form-label">Type of Service *</label>
+              <select id="serviceType" name="service" class="form-input form-select" required>
+                <option value="" disabled selected>Select a service...</option>
+                <option value="solar">Solar Installation</option>
+                <option value="wiring">House Wiring / Rewire</option>
+                <option value="industrial">Industrial / Commercial</option>
+                <option value="lighting">Lighting Installation</option>
+                <option value="ac">AC Installation / Repair</option>
+                <option value="db-board">DB Board Upgrade</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+              <span class="form-error" id="serviceError" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="clientArea" class="form-label">Your Area / Suburb *</label>
+              <input type="text" id="clientArea" name="area" class="form-input"
+                     placeholder="e.g. Borrowdale, Chitungwiza" required />
+              <span class="form-error" id="areaError" role="alert" aria-live="polite"></span>
+            </div>
+
+          </div><!-- /.form-row -->
+
+          <!-- Row 3: Project details (optional, full width) -->
+          <div class="form-group form-group--full">
+            <label for="clientMessage" class="form-label">
+              Project Details <span class="form-label-optional">(optional)</span>
+            </label>
+            <textarea id="clientMessage" name="message" class="form-input form-textarea"
+                      rows="4"
+                      placeholder="e.g. 3-bedroom house, need full rewire, already have panels..."></textarea>
+          </div>
+
+          <!-- Submit — JS changes text to "Sending..." while processing -->
+          <button type="submit" class="btn btn--primary btn--lg btn--full" id="submitBtn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Send My Enquiry — We'll Reply Within 1 Hour
+          </button>
+
+          <!-- Form feedback: JS sets text + adds .success or .error class -->
+          <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+
+        </form>
+
+      </div><!-- /.contact__form-col -->
+
+      <!-- RIGHT: Direct contact details -->
+      <div class="contact__info-col">
+
+        <h3 class="contact__info-title">Prefer to Call? We Answer.</h3>
+
+        <address class="contact-info-list">
+
+          <!-- [EDIT-PHONE] Update phone numbers below -->
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon contact-info-item__icon--orange" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p class="contact-info-item__label">Harare Operations</p>
+              <a href="tel:+263717675763" class="contact-info-item__value">+263 717 675 763</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon contact-info-item__icon--orange" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p class="contact-info-item__label">Chitungwiza Operations</p>
+              <a href="tel:+263783473146" class="contact-info-item__value">+263 783 473 146</a>
+            </div>
+          </div>
+
+          <!-- [EDIT-EMAIL] Update email address below -->
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon contact-info-item__icon--orange" aria-hidden="true">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <p class="contact-info-item__label">Email</p>
+              <a href="mailto:info@dosmac.co.zw" class="contact-info-item__value">info@dosmac.co.zw</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon contact-info-item__icon--orange" aria-hidden="true">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <p class="contact-info-item__label">Service Areas</p>
+              <p class="contact-info-item__value">Harare &amp; Chitungwiza, Zimbabwe</p>
+            </div>
+          </div>
+
+        </address>
+
+        <!-- WhatsApp CTA — [EDIT-PHONE] update number if needed -->
+        <a href="https://wa.me/263717675763?text=Hi%20Dosmac!%20I%20need%20a%20quote%20for%20electrical%20work%20at%20my%20property."
+           class="btn btn--whatsapp btn--lg btn--full contact__whatsapp"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          Chat on WhatsApp
+        </a>
+
+        <div class="contact__trust-badge">
+          <i class="fa-solid fa-shield-halved text--orange" aria-hidden="true"></i>
+          <p>Registered Electrical Contractors — Zimbabwe.<br />
+             Trade-tested precision in every wire.</p>
+        </div>
+
+      </div><!-- /.contact__info-col -->
+
+    </div><!-- /.contact__inner -->
+  </section><!-- /#contact -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  FOOTER                                                  ║
+       ║  3 columns: Brand | Quick Links | Contact               ║
+       ║  Bottom bar: copyright                                   ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__top">
+
+      <!-- Col 1: Brand -->
+      <div class="footer__brand">
+        <a href="#home" class="navbar__logo footer__logo" aria-label="Dosmac Electrical home">
+          <span class="logo--blue">DOSMAC</span><span class="logo--orange">ELECTRICAL</span>
+        </a>
+        <p class="footer__tagline">
+          Registered electrical contractors serving Harare and Chitungwiza.
+          We don't just wire buildings — we protect the people inside them.
+        </p>
+        <div class="footer__reg-badge">
+          <i class="fa-solid fa-certificate text--orange" aria-hidden="true"></i>
+          <span>REGISTERED ELECTRICAL CONTRACTORS — ZIMBABWE</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick links -->
+      <div class="footer__links">
+        <h4 class="footer__col-title">QUICK LINKS</h4>
+        <nav aria-label="Footer navigation">
+          <a href="#home"         class="footer-link">Home</a>
+          <a href="#services"     class="footer-link">Services</a>
+          <a href="#why-dosmac"   class="footer-link">Why Dosmac</a>
+          <a href="#portfolio"    class="footer-link">Our Work</a>
+          <a href="#testimonials" class="footer-link">Clients</a>
+          <a href="#contact"      class="footer-link">Get a Quote</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer__contact">
+        <h4 class="footer__col-title">DIRECT CONTACT</h4>
+        <!-- [EDIT-PHONE] [EDIT-EMAIL] Update below -->
+        <address class="footer-contact-list">
+          <a href="tel:+263717675763"        class="footer-contact-item"><i class="fa-solid fa-phone text--orange" aria-hidden="true"></i> +263 717 675 763</a>
+          <a href="tel:+263783473146"        class="footer-contact-item"><i class="fa-solid fa-phone text--orange" aria-hidden="true"></i> +263 783 473 146</a>
+          <a href="mailto:info@dosmac.co.zw" class="footer-contact-item"><i class="fa-solid fa-envelope text--orange" aria-hidden="true"></i> info@dosmac.co.zw</a>
+          <span                              class="footer-contact-item"><i class="fa-solid fa-location-dot text--orange" aria-hidden="true"></i> Chitungwiza &amp; Harare</span>
+        </address>
+        <a href="https://wa.me/263717675763"
+           class="btn btn--whatsapp btn--sm footer__whatsapp"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+        </a>
+      </div>
+
+    </div><!-- /.footer__top -->
+
+    <!-- Copyright bar -->
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <!-- [EDIT-YEAR] Update year manually, or JS auto-updates it (see main.js) -->
+        <p class="footer__copy">&copy; <span id="copyrightYear">2026</span> Dosmac Electrical (Pvt) Ltd. All rights reserved.</p>
+        <p class="footer__credit">Built with precision. Just like our installations.</p>
+      </div>
+    </div>
+
+  </footer><!-- /.footer -->
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  FLOATING WHATSAPP BUTTON                               ║
+       ║  Fixed bottom-right. Always visible. Pulses via CSS.    ║
+       ║  [EDIT-PHONE] Update number in href if needed.          ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <a href="https://wa.me/263717675763?text=Hi%20Dosmac!%20I%20need%20a%20quote%20for%20electrical%20work%20at%20my%20property."
+     class="whatsapp-fab"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with Dosmac on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="whatsapp-fab__tooltip">Chat with us!</span>
+  </a>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════╗
+       ║  SCRIPT — loaded at bottom of body so the HTML          ║
+       ║  is fully parsed before JS runs. This gives users a     ║
+       ║  faster first visible paint.                             ║
+       ╚══════════════════════════════════════════════════════════╝ -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
