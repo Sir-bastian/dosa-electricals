@@ -1,11 +1,51 @@
-
-
-
 /*
+╔══════════════════════════════════════════════════════════════════════╗
+║  PROJECT   :  Dosmac Electrical — Main Stylesheet                   ║
+║  FILE      :  assets/css/styles.css                                 ║
+║  VERSION   :  3.0 (Production — Mobile First)                       ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  TABLE OF CONTENTS                                                   ║
+║  1.  CSS Custom Properties (Design Tokens)                           ║
+║  2.  CSS Reset & Base Styles                                         ║
+║  3.  Utility Classes                                                 ║
+║  4.  Typography Scale                                                ║
+║  5.  Layout — Container & Section Headers                            ║
+║  6.  Buttons                                                         ║
+║  7.  Navbar                                                          ║
+║  8.  Hero Section                                                    ║
+║  9.  Stats Bar                                                       ║
+║  10. Services Section                                                ║
+║  11. Why Dosmac Section                                              ║
+║  12. Testimonials Section                                            ║
+║  13. Portfolio Section                                               ║
+║  14. Contact Section                                                 ║
+║  15. Footer                                                          ║
+║  16. Floating WhatsApp Button                                        ║
+║  17. Animations & Keyframes                                          ║
+║  18. Media Queries (Mobile First — min-width)                        ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  BRAND COLOURS                                                       ║
+║  Orange  #E8560A  → primary CTAs, highlights, brand accent          ║
+║  Blue    #1A6BCC  → trust, links, secondary CTAs                    ║
+║  Dark    #1A1A1A  → page background                                 ║
+║  Green   #25D366  → WhatsApp only (do not use for other things)     ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  RESPONSIVE STRATEGY — MOBILE FIRST                                  ║
+║  Base styles target small mobile (< 480px).                          ║
+║  min-width queries progressively enhance the layout:                 ║
+║    480px  → mobile                                                   ║
+║    768px  → tablet                                                   ║
+║   1024px  → desktop                                                  ║
+╚══════════════════════════════════════════════════════════════════════╝
+*/
+
+
+/* ═══════════════════════════════════════════════════════════════
    1. CSS CUSTOM PROPERTIES — Design Tokens
+   ───────────────────────────────────────────────────────────────
    All brand values live here. Change once, updates everywhere.
    :root makes them available to every element on the page.
-*/
+═══════════════════════════════════════════════════════════════ */
 :root {
 
   /* Brand Colours */
@@ -59,7 +99,9 @@
 
   /* Layout */
   --container-max:  1200px; /* max page content width */
-  --navbar-height:  72px;   /* used for scroll offset calculations */
+
+  /* Navbar height — mobile base; overridden to 72px at 1024px+ */
+  --navbar-height:  64px;
 
   /* Border Radius */
   --radius-sm:   4px;
@@ -82,11 +124,12 @@
 }
 
 
-/*
+/* ═══════════════════════════════════════════════════════════════
    2. CSS RESET & BASE STYLES
+   ───────────────────────────────────────────────────────────────
    Normalises browser defaults so the site looks consistent
    across Chrome, Firefox, Safari, Edge, and mobile browsers.
- */
+═══════════════════════════════════════════════════════════════ */
 
 /* box-sizing: border-box makes width/height calculations
    include padding and border, not add to them. Sanest default. */
@@ -96,6 +139,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Explicitly set box-sizing on form elements.
+   The * selector above is NOT reliably applied to replaced form elements
+   (input, select, textarea) in many Android/iOS browsers — they keep the
+   UA default of content-box, which adds padding ON TOP of width: 100%
+   and causes inputs to overflow their container by exactly 2× their padding.
+   This targeted rule is the correct and necessary fix. */
+input,
+select,
+textarea,
+button {
+  box-sizing: border-box;
+  max-width: 100%;   /* hard cap — input can never exceed its container */
+  min-width: 0;      /* override UA min-width so inputs can shrink inside grids */
 }
 
 html {
@@ -150,9 +208,9 @@ button {
   color: inherit;
 }
 
-/* Section: consistent vertical padding — overridden per section as needed */
+/* Section: mobile base padding — scaled up via min-width queries */
 section {
-  padding: var(--space-20) 0;
+  padding: var(--space-12) 0;
 }
 
 /* Focus outline — visible for keyboard navigation, removed for mouse clicks.
@@ -163,10 +221,11 @@ section {
 }
 
 
-/*
+/* ═══════════════════════════════════════════════════════════════
    3. UTILITY CLASSES
+   ───────────────────────────────────────────────────────────────
    Single-purpose classes used inline in HTML.
- */
+═══════════════════════════════════════════════════════════════ */
 
 /* Colour utilities */
 .text--orange { color: var(--color-orange); }
@@ -185,10 +244,11 @@ section {
 }
 
 
-/* 
+/* ═══════════════════════════════════════════════════════════════
    4. TYPOGRAPHY SCALE
+   ───────────────────────────────────────────────────────────────
    Shared text styles used across multiple sections.
- */
+═══════════════════════════════════════════════════════════════ */
 
 /* Eyebrow: small uppercase label above section headings */
 .section-eyebrow {
@@ -234,12 +294,13 @@ section {
    5. LAYOUT — Container & Section Headers
 ═══════════════════════════════════════════════════════════════ */
 
-/* .container: centres content and caps max width */
+/* .container: centres content and caps max width.
+   Mobile base uses comfortable horizontal padding; scaled up at 768px. */
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-5); /* 20px — gives breathing room on narrow screens */
 }
 
 /* .section-header: centred block containing eyebrow + title + subtitle */
@@ -273,8 +334,12 @@ section {
   cursor: pointer;
   transition: all var(--transition-base);
   border: 2px solid transparent;
-  white-space: nowrap;
-  max-width: 100%;            /* prevents overflow on tiny screens */
+  /* Mobile base: allow text to wrap so long CTA labels stay inside the button.
+     white-space: nowrap restored at 480px+ where there is enough room. */
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -363,10 +428,10 @@ section {
   height: var(--navbar-height);
 }
 
-/* Logo typography */
+/* Logo typography — small mobile base; scaled up at 480px */
 .navbar__logo {
   font-family: var(--font-heading);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);   /* 480px+ restores var(--fs-xl) */
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -375,9 +440,9 @@ section {
 .logo--blue   { color: var(--color-blue); }
 .logo--orange { color: var(--color-orange); }
 
-/* Desktop nav links */
+/* Desktop nav links — hidden on mobile base; shown at 1024px+ */
 .navbar__links {
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-8);
 }
@@ -408,9 +473,9 @@ section {
 /* Extra left margin on the CTA button in nav */
 .nav-cta { margin-left: var(--space-4); }
 
-/* ── Hamburger button (mobile only, hidden on desktop) ── */
+/* ── Hamburger button (visible on mobile base; hidden at 1024px+) ── */
 .navbar__hamburger {
-  display: none;            /* shown via @media at ≤1024px */
+  display: flex;           /* hidden via @media at 1024px+ */
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -522,20 +587,22 @@ section {
   position: relative;  /* above overlay (z-index of stacking context) */
   z-index: 1;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
   text-align: center;
   /* push content below fixed navbar */
   padding-top: calc(var(--navbar-height) + var(--space-12));
   padding-bottom: var(--space-20);
-  /* horizontal padding so text never touches screen edges on mobile */
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  /* mobile: wider horizontal padding so text never touches screen edges */
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
 }
 
 .hero__eyebrow { margin-bottom: var(--space-4); }
 
+/* Hero headline — mobile-first clamp; larger clamp at 768px+ */
 .hero__headline {
-  /* clamp(min, preferred, max) — scales with viewport width */
-  font-size: clamp(var(--fs-3xl), 7vw, var(--fs-5xl));
+  font-size: clamp(var(--fs-2xl), 8vw, var(--fs-3xl));
   font-family: var(--font-heading);
   font-weight: 900;
   line-height: 1.05;
@@ -543,48 +610,60 @@ section {
   text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
+/* Hero subtext — fixed base size; fluid clamp at 768px+ */
 .hero__subtext {
-  font-size: clamp(var(--fs-base), 2vw, var(--fs-md));
+  font-size: var(--fs-base);
   color: var(--color-text-secondary);
   max-width: 660px;
   margin: 0 auto var(--space-8);
   line-height: 1.7;
 }
 
-/* Trust badge row — 2×2 grid layout.
+/* Trust badge row — 2-col mobile base; auto-col at 768px+.
    Grid gives cleaner alignment than flex-wrap on mobile. */
 .hero__trust-bar {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: var(--space-2) var(--space-3);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
   justify-content: center;
   margin-bottom: var(--space-8);
+  width: 100%;
+  max-width: 100%;         /* 480px+ narrows this to 360px */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Trust badge — smallest mobile base; font/padding restored at 480px+ */
 .trust-badge {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  font-size: var(--fs-xs);
+  font-size: 9px;          /* 480px+ restores var(--fs-xs) */
   font-weight: 700;
   color: var(--color-orange);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;  /* 480px+ restores 0.04em */
   text-transform: uppercase;
   background-color: rgba(232, 86, 10, 0.10);
   border: 1px solid rgba(232, 86, 10, 0.30);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-1) var(--space-2); /* 480px+ restores space-2 space-3 */
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
 
-/* CTA button group — horizontal on desktop, vertical on mobile */
+/* CTA button group — stacked column on mobile; row at 768px+ */
 .hero__cta-group {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
   flex-wrap: wrap;
   gap: var(--space-4);
   justify-content: center;
 }
+
+/* Full-width buttons in mobile stack */
+.hero__cta-group .btn { width: 100%; }
 
 /* Scroll arrow at bottom of hero — CSS bounce animation */
 .hero__scroll-indicator {
@@ -604,7 +683,8 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    9. STATS BAR
    ───────────────────────────────────────────────────────────────
-   4 animated counters in a 4-column dark bar.
+   4 animated counters.
+   Mobile base: 2×2 grid. Desktop: 4-col row.
    Counters animate when section scrolls into view (JS).
 ═══════════════════════════════════════════════════════════════ */
 
@@ -615,18 +695,25 @@ section {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Mobile base: 2-col grid with small gap; 4-col restored at 1024px+ */
 .stats-bar__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 2-col on mobile via @media */
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);       /* 480px+ resets gap to 0 */
 }
 
 .stat-item {
   text-align: center;
-  padding: var(--space-6);
-  /* right border between items (except last) */
+  padding: var(--space-3) var(--space-2); /* 480px+ restores var(--space-6) */
+  /* right border between items — selectively removed per layout below */
   border-right: 1px solid var(--color-border);
 }
-.stat-item:last-child { border-right: none; }
+
+/* 2-col border logic (mobile base):
+   odd items (col 1) keep the right border; even items (col 2) remove it. */
+.stat-item:nth-child(2n)              { border-right: none; }
+.stat-item:nth-child(2n-1):not(:last-child) { border-right: 1px solid var(--color-border); }
+.stat-item:last-child                 { border-right: none; }
 
 .stat-item__value {
   display: flex;
@@ -663,7 +750,7 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    10. SERVICES SECTION
    ───────────────────────────────────────────────────────────────
-   4-card grid: 2 columns on desktop, 1 on mobile.
+   Single column on mobile; 2-col at 768px+.
    Solar card (.service-card--featured) has orange accent border.
 ═══════════════════════════════════════════════════════════════ */
 
@@ -671,17 +758,19 @@ section {
   background-color: var(--color-bg-alt);
 }
 
+/* Mobile base: single column; 2-col restored at 768px+ */
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-8);
 }
 
+/* Mobile base: tighter padding; restored at 480px+ */
 .service-card {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-8);
+  padding: var(--space-6);   /* 480px+ restores var(--space-8) */
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
@@ -774,17 +863,18 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    11. WHY DOSMAC SECTION
    ───────────────────────────────────────────────────────────────
-   Two-column grid: real team photo (left) + trust copy (right).
+   Single column on mobile; two-column grid at 1024px+.
    Photo: Dosmac team on rooftop solar install, Harare.
    File: assets/images/about-team-solar-install.jpg
 ═══════════════════════════════════════════════════════════════ */
 
 .why-dosmac { background-color: var(--color-bg); }
 
+/* Mobile base: single column, stacked; 2-col grid at 1024px+ */
 .why-dosmac__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  grid-template-columns: 1fr;
+  gap: var(--space-10);    /* 1024px+ restores var(--space-16) */
   align-items: center;
 }
 
@@ -797,9 +887,10 @@ section {
   overflow: hidden; /* clips image corners + badge to wrapper shape */
 }
 
+/* Mobile base height: 420px; restored to 520px at 1024px+ */
 .why-dosmac__img {
   width: 100%;
-  height: 520px;
+  height: 420px;
   object-fit: cover;
   object-position: center top;
   display: block;
@@ -810,7 +901,7 @@ section {
   position: absolute;
   bottom: var(--space-6);
   right: var(--space-6);
-  background-color: var(--color-blue);
+  background-color: var(--color-orange);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
   text-align: center;
@@ -886,9 +977,10 @@ section {
 
 .testimonials { background-color: var(--color-bg-alt); }
 
+/* Mobile base: single column; 2-col at 768px+; 3-col at 1024px+ */
 .testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-8);
 }
 
@@ -958,22 +1050,32 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    13. PORTFOLIO SECTION
    ───────────────────────────────────────────────────────────────
-   Filter tabs + 3-col image grid with overlay on hover.
-   On mobile, overlay stays visible (no hover on touch devices).
+   Filter tabs + image grid with overlay.
+   Mobile: single column, tabs scroll horizontally, overlay always visible.
+   Tablet: 2-col. Desktop: 3-col, overlay on hover only.
 ═══════════════════════════════════════════════════════════════ */
 
 .portfolio { background-color: var(--color-bg); }
 
-/* Filter tab row */
+/* Mobile base: horizontal scroll for tabs on small screens.
+   Scrollbar hidden via ::-webkit-scrollbar and scrollbar-width.
+   480px+ restores wrapping behaviour. */
 .portfolio__tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
   gap: var(--space-2);
-  justify-content: center;
   margin-bottom: var(--space-10);
+  padding-bottom: var(--space-3);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.portfolio__tabs::-webkit-scrollbar { display: none; }
 
+/* Prevent tabs from shrinking so they stay tappable on small screens */
 .portfolio-tab {
+  flex-shrink: 0;
   font-size: var(--fs-sm);
   font-weight: 600;
   padding: var(--space-2) var(--space-5);
@@ -995,10 +1097,10 @@ section {
   color: #fff;
 }
 
-/* Portfolio grid: 3 columns desktop */
+/* Mobile base: single column; 2-col at 768px+; 3-col at 1024px+ */
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-5);
 }
 
@@ -1021,7 +1123,8 @@ section {
 }
 .portfolio-item:hover .portfolio-item__img { transform: scale(1.05); }
 
-/* Overlay: hidden by default, slides up on hover */
+/* Overlay: always visible on mobile (no hover on touch devices).
+   opacity set to 0 at 768px+ so hover works on desktop. */
 .portfolio-item__overlay {
   position: absolute;
   inset: 0;
@@ -1030,7 +1133,7 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--space-5);
-  opacity: 0;
+  opacity: 1;              /* 768px+ sets this to 0 (hover-only) */
   transition: opacity var(--transition-base);
 }
 .portfolio-item:hover .portfolio-item__overlay { opacity: 1; }
@@ -1061,13 +1164,29 @@ section {
    14. CONTACT SECTION
 ═══════════════════════════════════════════════════════════════ */
 
-.contact { background-color: var(--color-bg-alt); }
+.contact {
+  background-color: var(--color-bg-alt);
+  /* Contain any child element that might overflow on narrow viewports */
+  overflow: hidden;
+}
 
+/* Mobile base: single column; 2-col at 1024px+ */
 .contact__inner {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-16);
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Grid children default to min-width:auto — reset so columns can shrink */
+  min-width: 0;
+}
+
+/* Every direct child of the contact grid must also be shrinkable */
+.contact__inner > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .contact__info-title {
@@ -1147,19 +1266,29 @@ section {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;           /* must be shrinkable inside its grid cell */
+  box-sizing: border-box;
 }
 
-/* Two-column row (becomes 1-col on mobile) */
+/* Mobile base: single column; 2-col at 768px+ */
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;          /* shrinkable inside flex parent */
+  box-sizing: border-box;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  min-width: 0;          /* shrinkable inside grid cell */
+  max-width: 100%;
 }
 
 /* Full-width group (stretches across both columns) */
@@ -1178,6 +1307,8 @@ section {
 
 .form-input {
   width: 100%;
+  max-width: 100%;          /* hard stop — never wider than container */
+  min-width: 0;             /* allow shrinking inside grid/flex parents */
   padding: var(--space-4);
   background-color: var(--color-bg-input);
   border: 1px solid var(--color-border);
@@ -1187,6 +1318,9 @@ section {
   font-size: var(--fs-base);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
+  box-sizing: border-box;   /* explicit — does not rely on * selector for form elements */
+  -webkit-appearance: none; /* strip iOS/Android UA styling that can add implicit sizing */
+  appearance: none;
 }
 .form-input:focus {
   border-color: var(--color-blue);
@@ -1194,7 +1328,8 @@ section {
 }
 .form-input::placeholder { color: var(--color-text-muted); }
 
-.form-select { appearance: none; cursor: pointer; }
+/* select needs its own cursor + pointer; appearance already reset on .form-input */
+.form-select { cursor: pointer; }
 
 .form-textarea { resize: vertical; min-height: 100px; }
 
@@ -1233,17 +1368,31 @@ section {
    15. FOOTER
 ═══════════════════════════════════════════════════════════════ */
 
-.footer { background-color: #0D0D0D; }
+.footer {
+  background-color: #0D0D0D;
+}
 
+/* Safety-net padding applied directly to the footer so content never
+   touches the screen edge, regardless of inner .container usage in HTML.
+   Matches the base .container padding of var(--space-5) on mobile,
+   then overridden to 0 at 768px+ where .container handles horizontal spacing. */
+.footer__top,
+.footer__bottom {
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+
+/* Mobile base: single column; 2-col at 768px+; 3-col at 1024px+ */
 .footer__top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: var(--space-12);
-  padding: var(--space-16) 0;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding: var(--space-10) 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.footer__brand { max-width: 340px; }
+/* Mobile base: no column span, no max-width cap */
+.footer__brand { max-width: none; }
 .footer__logo  { display: inline-block; margin-bottom: var(--space-4); }
 
 .footer__tagline {
@@ -1314,16 +1463,20 @@ section {
   padding: var(--space-6) 0;
 }
 
+/* Mobile base: stacked + centred; row layout at 768px+ */
 .footer__bottom-inner {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   gap: var(--space-4);
   flex-wrap: wrap;
 }
 
+/* Mobile base: slightly smaller text; restored at 480px+ */
 .footer__copy, .footer__credit {
-  font-size: var(--fs-xs);
+  font-size: 10px;
   color: var(--color-text-muted);
 }
 
@@ -1335,20 +1488,21 @@ section {
    Pulses via @keyframes pulse to attract attention.
 ═══════════════════════════════════════════════════════════════ */
 
+/* Mobile base: smaller button, closer to edge */
 .whatsapp-fab {
   position: fixed;
-  bottom: var(--space-8);
-  right: var(--space-8);
+  bottom: var(--space-5);
+  right: var(--space-5);
   z-index: 999;
-  width: 60px;
-  height: 60px;
+  width: 52px;           /* 480px+ restores 60px */
+  height: 52px;          /* 480px+ restores 60px */
   border-radius: var(--radius-full);
   background-color: var(--color-whatsapp);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;     /* 480px+ restores 1.75rem */
   box-shadow: 0 4px 20px rgba(37,211,102,0.5);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   animation: pulse 2.5s ease-in-out infinite;
@@ -1400,152 +1554,191 @@ section {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   18. MEDIA QUERIES — Responsive Breakpoints
+   18. MEDIA QUERIES — Mobile First (min-width)
    ───────────────────────────────────────────────────────────────
+   Base styles above target small mobile (< 480px).
+   Each breakpoint progressively enhances the layout upward.
+
    Breakpoints:
-     Large desktop : > 1024px   (default — all styles above)
-     Tablet        : ≤ 1024px
-     Mobile        : ≤ 768px
-     Small mobile  : ≤ 480px
+     480px  → mobile         (restore trust-badge, fab size, tabs)
+     768px  → tablet         (2-col services, testimonials, portfolio,
+                               form-row, hero cta row, footer bottom row)
+    1024px  → desktop        (4-col stats, 3-col testimonials/portfolio,
+                               2-col why/contact/footer, show nav links)
 ═══════════════════════════════════════════════════════════════ */
 
-/* ── TABLET: ≤1024px ─────────────────────────────────────── */
-@media (max-width: 1024px) {
 
-  :root { --navbar-height: 64px; }
+/* ── 480px and up ─────────────────────────────────────────── */
+@media (min-width: 480px) {
 
-  /* Nav: hide desktop links, show hamburger button */
-  .navbar__links      { display: none; }
-  .navbar__hamburger  { display: flex; }
+  /* Buttons: restore nowrap now that screens are wide enough for short labels */
+  .btn { white-space: nowrap; word-break: normal; }
 
-  /* Hero: explicit scroll (redundant with global but kept for clarity) */
-  .hero { background-attachment: scroll; }
+  /* Navbar: full-size logo */
+  .navbar__logo { font-size: var(--fs-xl); }
 
-  /* Stats: 2×2 grid */
-  .stats-bar__grid          { grid-template-columns: repeat(2, 1fr); }
-  .stat-item:nth-child(2)   { border-right: none; }
-
-  /* Services: stays 2-col on tablet */
-
-  /* Why Dosmac: stack photo above copy */
-  .why-dosmac__inner        { grid-template-columns: 1fr; gap: var(--space-10); }
-  .why-dosmac__img          { height: 420px; }
-
-  /* Testimonials: 2 cols */
-  .testimonials__grid       { grid-template-columns: repeat(2, 1fr); }
-
-  /* Portfolio: 2 cols */
-  .portfolio__grid          { grid-template-columns: repeat(2, 1fr); }
-
-  /* Contact: stack vertically */
-  .contact__inner           { grid-template-columns: 1fr; }
-
-  /* Footer: 2 columns */
-  .footer__top              { grid-template-columns: 1fr 1fr; }
-  .footer__brand            { grid-column: 1 / -1; max-width: none; }
-}
-
-
-/* ── MOBILE: ≤768px ──────────────────────────────────────── */
-@media (max-width: 768px) {
-
-  section { padding: var(--space-12) 0; }
-
-  /* Narrower container padding on mobile */
-  .container { padding: 0 var(--space-4); }
-
-  /* Hero */
-  .hero,
-  .hero__content {
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-  .hero__content {
-    padding-left: var(--space-5);
-    padding-right: var(--space-5);
-  }
-  .hero__headline { font-size: clamp(var(--fs-2xl), 8vw, var(--fs-3xl)); }
-  .hero__subtext  { font-size: var(--fs-base); }
-
-  /* Trust badges: 2-col grid, centred */
+  /* Hero trust bar: max-width cap restores, gap matches original */
   .hero__trust-bar {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
+    gap: var(--space-2) var(--space-3);
     max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
   }
-  .trust-badge { justify-content: center; }
 
-  /* CTA buttons: full width, stacked */
-  .hero__cta-group         { flex-direction: column; align-items: stretch; width: 100%; }
-  .hero__cta-group .btn    { width: 100%; }
-
-  /* Stats */
-  .stat-item:nth-child(odd):not(:last-child) { border-right: 1px solid var(--color-border); }
-  .stat-item:nth-child(even)                 { border-right: none; }
-
-  /* Services: single column */
-  .services__grid          { grid-template-columns: 1fr; }
-
-  /* Testimonials: single column */
-  .testimonials__grid      { grid-template-columns: 1fr; }
-
-  /* Portfolio: single column. Overlay always visible (no hover on touch) */
-  .portfolio__grid                    { grid-template-columns: 1fr; }
-  .portfolio-item__overlay            { opacity: 1; }
-
-  /* Contact form: single column */
-  .form-row                { grid-template-columns: 1fr; }
-
-  /* Footer: single column */
-  .footer__top {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    padding: var(--space-10) 0;
+  /* Trust badge: restore original font size and padding */
+  .trust-badge {
+    font-size: var(--fs-xs);
+    padding: var(--space-2) var(--space-3);
+    letter-spacing: 0.04em;
   }
-  .footer__brand           { grid-column: auto; }
-  .footer__bottom-inner    { flex-direction: column; text-align: center; }
 
-  /* WhatsApp FAB: slightly closer to edge */
-  .whatsapp-fab { bottom: var(--space-5); right: var(--space-5); }
+  /* Stats: remove small-mobile gap; restore item padding */
+  .stats-bar__grid { gap: 0; }
+  .stat-item       { padding: var(--space-6); }
+
+  /* Service cards: restore full padding */
+  .service-card { padding: var(--space-8); }
+
+  /* Portfolio tabs: restore wrapping and centred layout */
+  .portfolio__tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+    padding-bottom: 0;
+    scrollbar-width: auto;
+  }
+  .portfolio__tabs::-webkit-scrollbar { display: initial; }
+  .portfolio-tab { flex-shrink: initial; }
+
+  /* Footer copy: restore standard font size */
+  .footer__copy, .footer__credit { font-size: var(--fs-xs); }
+
+  /* WhatsApp FAB: restore full size */
+  .whatsapp-fab { width: 60px; height: 60px; font-size: 1.75rem; }
 }
 
 
-/* ── SMALL MOBILE: ≤480px ─────────────────────────────────── */
-@media (max-width: 480px) {
+/* ── 768px and up ─────────────────────────────────────────── */
+@media (min-width: 768px) {
 
-  /* Shrink navbar logo */
-  .navbar__logo { font-size: var(--fs-lg); }
+  /* Section: full desktop spacing */
+  section { padding: var(--space-20) 0; }
 
-  /* Stats: tighter */
-  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
-  .stat-item       { padding: var(--space-3) var(--space-2); }
+  /* Container: wider horizontal padding on tablet/desktop */
+  .container { padding: 0 var(--space-6); }
 
-  /* Trust badges: smaller text */
-  .hero__trust-bar  { gap: var(--space-2); max-width: 100%; }
-  .trust-badge      { font-size: 9px; padding: var(--space-1) var(--space-2); letter-spacing: 0.02em; }
-
-  /* Service cards: tighter padding */
-  .service-card { padding: var(--space-6); }
-
-  /* Portfolio tabs: horizontal scroll on tiny screens.
-     Scrollbar hidden via ::-webkit-scrollbar and scrollbar-width. */
-  .portfolio__tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: var(--space-3);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+  /* Footer: remove direct padding — .container inside footer handles it from here */
+  .footer__top,
+  .footer__bottom {
+    padding-left: 0;
+    padding-right: 0;
   }
-  .portfolio__tabs::-webkit-scrollbar { display: none; }
-  .portfolio-tab { flex-shrink: 0; }
 
-  /* Footer */
-  .footer__copy, .footer__credit { font-size: 10px; }
+  /* Hero content: tighter horizontal padding (container handles width) */
+  .hero__content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
 
-  /* WhatsApp FAB: slightly smaller */
-  .whatsapp-fab { width: 52px; height: 52px; font-size: 1.5rem; }
+  /* Hero headline: larger fluid clamp for bigger viewports */
+  .hero__headline { font-size: clamp(var(--fs-3xl), 7vw, var(--fs-5xl)); }
+
+  /* Hero subtext: fluid clamp */
+  .hero__subtext { font-size: clamp(var(--fs-base), 2vw, var(--fs-md)); }
+
+  /* Hero trust bar: auto-width columns (desktop original) */
+  .hero__trust-bar {
+    grid-template-columns: repeat(2, auto);
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Hero CTA group: row layout, auto widths */
+  .hero__cta-group {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+  .hero__cta-group .btn { width: auto; }
+
+  /* Stats: restore even-column borders for 2-col (border removed in base);
+     last-child rule still applies to remove the trailing border. */
+  .stat-item:nth-child(2n)              { border-right: 1px solid var(--color-border); }
+  .stat-item:nth-child(2n-1):not(:last-child) { border-right: 1px solid var(--color-border); }
+
+  /* Services: 2-column grid */
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Testimonials: 2-column grid */
+  .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Portfolio: 2-column grid; overlay hidden (hover reveals it) */
+  .portfolio__grid              { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-item__overlay      { opacity: 0; }
+
+  /* Contact form row: 2 columns */
+  .form-row { grid-template-columns: 1fr 1fr; }
+
+  /* Footer top: 2-column grid, brand spans full width */
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    padding: var(--space-16) 0;
+  }
+  .footer__brand { grid-column: 1 / -1; }
+
+  /* Footer bottom: row layout */
+  .footer__bottom-inner {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  /* WhatsApp FAB: move further from screen edge */
+  .whatsapp-fab { bottom: var(--space-8); right: var(--space-8); }
+}
+
+
+/* ── 1024px and up ─────────────────────────────────────────── */
+@media (min-width: 1024px) {
+
+  /* Increase navbar height for desktop */
+  :root { --navbar-height: 72px; }
+
+  /* Navbar: show desktop links, hide hamburger */
+  .navbar__links     { display: flex; }
+  .navbar__hamburger { display: none; }
+
+  /* Stats: 4-column row.
+     Restore even-item borders; :last-child still removes the final one. */
+  .stats-bar__grid { grid-template-columns: repeat(4, 1fr); }
+  .stat-item:nth-child(2n)     { border-right: 1px solid var(--color-border); }
+  .stat-item:last-child        { border-right: none; }
+
+  /* Why Dosmac: 2-column side-by-side layout */
+  .why-dosmac__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+  .why-dosmac__img { height: 520px; }
+
+  /* Testimonials: 3-column grid */
+  .testimonials__grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Portfolio: 3-column grid */
+  .portfolio__grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Contact: 2-column asymmetric layout; restore full gap */
+  .contact__inner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-16);
+  }
+
+  /* Footer top: full 3-column layout */
+  .footer__top { grid-template-columns: 1.5fr 1fr 1fr; }
+
+  /* Footer brand: back to auto column, restore max-width cap */
+  .footer__brand {
+    grid-column: auto;
+    max-width: 340px;
+  }
 }

@@ -38,6 +38,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css" />
 
+  <!-- Why: Unlike putting scripts at the bottom, defer starts the download immediately without 
+      blocking the visual "paint" of your site-->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- PreLoad an image to try and improve the site's LCP-->
+  <link rel="preload" as="image" href="assets/images/portfolio-solar-red-roof.jpg"/>
+  <link rel="preload" as="image" href="assets/images/hero-industrial-panel.jpg" fetchpriority="high">
+
 </head>
 
 <body>
@@ -96,9 +104,6 @@
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="container hero__content">
-
-      <!-- Eyebrow: small uppercase label above main headline -->
-      <p class="section-eyebrow hero__eyebrow">Registered Electrical Contractors — Zimbabwe</p>
 
       <!-- Main headline — addresses Zimbabwe's #1 electrical pain point -->
       <h1 class="hero__headline">
@@ -413,15 +418,7 @@
   </section><!-- /#why-dosmac -->
 
 
-  <!-- ╔══════════════════════════════════════════════════════════╗
-       ║  SECTION 5: TESTIMONIALS                                ║
-       ╠══════════════════════════════════════════════════════════╣
-       ║  3 client quote cards.                                  ║
-       ║  [EDIT-QUOTE] Replace ALL placeholder text below with   ║
-       ║  real client quotes. How to get them: WhatsApp your     ║
-       ║  best 5 clients and ask: "What was the job? What        ║
-       ║  impressed you most? Can I quote you on our website?"   ║
-       ╚══════════════════════════════════════════════════════════╝ -->
+  <!-- SECTION 5: TESTIMONIALS -->
   <section class="testimonials" id="testimonials" aria-label="Client testimonials">
     <div class="container">
 
@@ -434,7 +431,7 @@
 
       <div class="testimonials__grid">
 
-        <!-- TESTIMONIAL 1 — [EDIT-QUOTE] Replace with real client words -->
+        <!-- TESTIMONIAL 1 -->
         <article class="testimonial-card" aria-label="Client testimonial">
           <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
             <i class="fa-solid fa-star" aria-hidden="true"></i>
@@ -457,7 +454,7 @@
           </div>
         </article>
 
-        <!-- TESTIMONIAL 2 — [EDIT-QUOTE] -->
+        <!-- TESTIMONIAL -->
         <article class="testimonial-card" aria-label="Client testimonial">
           <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
             <i class="fa-solid fa-star" aria-hidden="true"></i>
@@ -546,19 +543,19 @@
 
       <!-- Filter tabs — JS reads data-filter, hides/shows items with matching data-category -->
       <div class="portfolio__tabs" role="tablist" aria-label="Filter projects by type">
-        <button class="portfolio-tab portfolio-tab--active" data-filter="all"            role="tab" aria-selected="true">All Work</button>
-        <button class="portfolio-tab"                       data-filter="solar"          role="tab" aria-selected="false">Solar</button>
-        <button class="portfolio-tab"                       data-filter="systems"        role="tab" aria-selected="false">Inverter Systems</button>
-        <button class="portfolio-tab"                       data-filter="industrial"     role="tab" aria-selected="false">Industrial</button>
-        <button class="portfolio-tab"                       data-filter="lighting"       role="tab" aria-selected="false">Lighting</button>
-        <button class="portfolio-tab"                       data-filter="infrastructure" role="tab" aria-selected="false">Infrastructure</button>
-        <button class="portfolio-tab"                       data-filter="residential"    role="tab" aria-selected="false">Residential</button>
+        <button class="portfolio-tab portfolio-tab--active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+        <button class="portfolio-tab" data-filter="solar" role="tab" aria-selected="false">Solar</button>
+        <button class="portfolio-tab" data-filter="systems" role="tab" aria-selected="false">Inverter Systems</button>
+        <button class="portfolio-tab" data-filter="industrial" role="tab" aria-selected="false">Industrial</button>
+        <button class="portfolio-tab" data-filter="lighting" role="tab" aria-selected="false">Lighting</button>
+        <button class="portfolio-tab" data-filter="infrastructure" role="tab" aria-selected="false">Infrastructure</button>
+        <button class="portfolio-tab" data-filter="residential" role="tab" aria-selected="false">Residential</button>
       </div>
 
       <!-- Portfolio grid: 3-col desktop → 2-col tablet → 1-col mobile -->
       <div class="portfolio__grid">
 
-        <!-- ── SOLAR: 8-panel array, red concrete tile roof ─────────────── -->
+        <!-- ── SOLAR: 8-panel array, red concrete tile roof -->
         <article class="portfolio-item" data-category="solar">
           <img src="assets/images/portfolio-solar-red-roof.jpg"
                alt="8-panel monocrystalline solar array on red tiled residential roof, Harare"
@@ -948,14 +945,6 @@
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     <span class="whatsapp-fab__tooltip">Chat with us!</span>
   </a>
-
-
-  <!-- ╔══════════════════════════════════════════════════════════╗
-       ║  SCRIPT — loaded at bottom of body so the HTML          ║
-       ║  is fully parsed before JS runs. This gives users a     ║
-       ║  faster first visible paint.                             ║
-       ╚══════════════════════════════════════════════════════════╝ -->
-  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
