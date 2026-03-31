@@ -35,16 +35,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"/>
 
   <!-- FONT AWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- Why: Unlike putting scripts at the bottom, defer starts the download immediately without 
       blocking the visual "paint" of your site-->
   <script src="assets/js/main.js" defer></script>
-
-  <!-- PreLoad an image to try and improve the site's LCP-->
-  <link rel="preload" as="image" href="assets/images/portfolio-solar-red-roof.jpg"/>
-  <link rel="preload" as="image" href="assets/images/hero-industrial-panel.jpg" fetchpriority="high">
 
 </head>
 
@@ -55,6 +51,7 @@
 
       <!-- Logo: clicking jumps back to top of page (#home) -->
       <a href="#home" class="navbar__logo" aria-label="Dosmac Electrical — go to top">
+        <img src="assets/images/dosmac-logo-drk-bg.jpg" alt="" class="logo__img">
         <span class="logo--blue">DOSMAC</span><span class="logo--orange">ELECTRICAL</span>
       </a>
 
@@ -544,6 +541,7 @@
       <!-- Filter tabs — JS reads data-filter, hides/shows items with matching data-category -->
       <div class="portfolio__tabs" role="tablist" aria-label="Filter projects by type">
         <button class="portfolio-tab portfolio-tab--active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+        <button class="portfolio-tab" data-filter="air conditioning" role="tab" aria-selected="false">AC Systems</button>
         <button class="portfolio-tab" data-filter="solar" role="tab" aria-selected="false">Solar</button>
         <button class="portfolio-tab" data-filter="systems" role="tab" aria-selected="false">Inverter Systems</button>
         <button class="portfolio-tab" data-filter="industrial" role="tab" aria-selected="false">Industrial</button>
@@ -557,12 +555,45 @@
 
         <!-- ── SOLAR: 8-panel array, red concrete tile roof -->
         <article class="portfolio-item" data-category="solar">
-          <img src="assets/images/portfolio-solar-red-roof.jpg"
+          <img src="assets/images/red_roof_solar.webp"
                alt="8-panel monocrystalline solar array on red tiled residential roof, Harare"
                class="portfolio-item__img" loading="lazy" width="600" height="450" />
           <div class="portfolio-item__overlay" aria-hidden="true">
             <span class="portfolio-item__tag">Solar</span>
             <p class="portfolio-item__caption">8× 550W Mono Array — Residential Harare. Hybrid system, grid-tie ready.</p>
+          </div>
+        </article>
+
+        <!-- ── AC SYSTEMS: Split system in residential setting -->
+        <article class="portfolio-item" data-category="air conditioning">
+          <img src="assets/images/air_condition-unsplash.jpg"
+               alt="Split-type air conditioning unit installed in modern residential living room, Harare"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">AC Systems</span>
+            <p class="portfolio-item__caption">Split System Install — Residential Harare. Efficient cooling for modern homes.</p>
+          </div>
+        </article>
+
+        <!-- AC SYSTEMS: MOUNTING AND WALL HANGING -->
+        <article class="portfolio-item" data-category="air conditioning">
+          <img src="assets/images/ac-on-wall.jpg"
+               alt="Wall-mounted air conditioning unit in modern residential living room, Harare"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">AC Systems</span>
+            <p class="portfolio-item__caption">Wall Mount Install — Residential Harare. Space-saving solution for modern homes.</p>
+          </div>
+        </article>
+
+        <!-- ── AC SYSTEMS: Residential setting -->
+        <article class="portfolio-item" data-category="air conditioning">
+          <img src="assets/images/ac_mounting.jpg"
+               alt="Split-type air conditioning unit being installed in modern residential living room, Harare"
+               class="portfolio-item__img" loading="lazy" width="600" height="450" />
+          <div class="portfolio-item__overlay" aria-hidden="true">
+            <span class="portfolio-item__tag">AC Systems</span>
+            <p class="portfolio-item__caption">Residential AC Install — Harare. Expert installation for optimal performance.</p>
           </div>
         </article>
 

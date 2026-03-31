@@ -398,6 +398,34 @@ section {
    Fixed to top. Starts transparent, becomes solid on scroll.
    JS adds .navbar--scrolled class at 80px scroll depth.
 ═══════════════════════════════════════════════════════════════ */
+/* Update your existing .navbar__logo block */
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);   
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Adjust spacing between image and text */
+}
+
+.navbar__logo img {
+  height: 60px; /* Force the image to a visible size */
+  width: auto;  /* Keep it from stretching */
+  object-fit: contain;
+}
+
+@media (min-width: 480px) {
+  .navbar__logo {
+    font-size: var(--fs-xl);
+  }
+  .navbar__logo img {
+    height: 48px;
+  }
+}
+/* logo end */
 
 .navbar {
   position: fixed;
