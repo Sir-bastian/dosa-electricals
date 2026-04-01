@@ -35,14 +35,12 @@ min-width queries progressively enhance the layout:
    1024px  → desktop 
 */
 
-
 /* 
    1. CSS CUSTOM PROPERTIES — Design Tokens
    All brand values live here. Change once, updates everywhere.
    :root makes them available to every element on the page.
  */
 :root {
-
   /* Brand Colours */
   --color-orange:         #E8560A; /* primary brand accent */
   --color-orange-light:   #FF7033; /* hover state for orange */
@@ -104,14 +102,12 @@ min-width queries progressively enhance the layout:
   --radius-lg:  16px;
   --radius-xl:  24px;
   --radius-full: 9999px; /* pill shape */
-
   /* Shadows */
   --shadow-sm:     0 2px 8px  rgba(0,0,0,0.3);
   --shadow-md:     0 4px 16px rgba(0,0,0,0.4);
   --shadow-lg:     0 8px 32px rgba(0,0,0,0.5);
   --shadow-orange: 0 4px 20px rgba(232, 86, 10, 0.35);
   --shadow-blue:   0 4px 20px rgba(26, 107, 204, 0.35);
-
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
@@ -123,7 +119,6 @@ min-width queries progressively enhance the layout:
    Normalises browser defaults so the site looks consistent
    across Chrome, Firefox, Safari, Edge, and mobile browsers.
 */
-
 
 *,
 *::before,
@@ -155,7 +150,6 @@ html {
   scroll-padding-top: 80px; /* Match your CONFIG.NAVBAR_SCROLL_THRESHOLD */
   /* Prevent iOS from increasing font size in landscape mode */
   -webkit-text-size-adjust: 100%;
-
 }
 
 /* Prevent horizontal overflow on any screen size */
@@ -213,12 +207,10 @@ section {
   outline-offset: 2px;
 }
 
-
 /* 
    3. UTILITY CLASSES
    Single-purpose classes used inline in HTML.
  */
-
 /* Colour utilities */
 .text--orange { color: var(--color-orange); }
 .text--blue   { color: var(--color-blue); }
@@ -234,13 +226,9 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 /* 4. TYPOGRAPHY SCALE
    Shared text styles used across multiple sections.
-*/
-
-/* Eyebrow: small uppercase label above section headings */
+Eyebrow: small uppercase label above section headings */
 .section-eyebrow {
   font-family: var(--font-body);
   font-size: var(--fs-xs);
@@ -278,14 +266,9 @@ section {
   line-height: 1.75;
   margin-bottom: var(--space-5);
 }
-
-
 /*
    5. LAYOUT — Container & Section Headers
  */
-
-/* .container: centres content and caps max width.
-   Mobile base uses comfortable horizontal padding; scaled up at 768px. */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -309,7 +292,6 @@ section {
                .btn--outline  (transparent + orange border)
    Sizes:      .btn--sm  .btn--md  .btn--lg  .btn--full
 */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -323,8 +305,6 @@ section {
   cursor: pointer;
   transition: all var(--transition-base);
   border: 2px solid transparent;
-  /* Mobile base: allow text to wrap so long CTA labels stay inside the button.
-     white-space: nowrap restored at 480px+ where there is enough room. */
   white-space: normal;
   text-align: center;
   word-break: break-word;
@@ -379,7 +359,6 @@ section {
   box-shadow: var(--shadow-orange);
 }
 .btn--outline:active { transform: translateY(0); }
-
 
 /*
    7. NAVBAR
@@ -470,7 +449,6 @@ section {
   position: relative;
   padding-bottom: 2px;
 }
-
 /* Animated underline on nav links */
 .nav-link::after {
   content: '';
@@ -484,13 +462,9 @@ section {
 }
 .nav-link:hover { color: var(--color-text-primary); }
 .nav-link:hover::after { width: 100%; }
-
-/* Extra left margin on the CTA button in nav */
 .nav-cta { margin-left: var(--space-4); }
-
-/* ── Hamburger button (visible on mobile base; hidden at 1024px+) ── */
 .navbar__hamburger {
-  display: flex;           /* hidden via @media at 1024px+ */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -515,7 +489,7 @@ section {
 
 /* ── Mobile dropdown menu ── */
 .navbar__mobile-menu {
-  display: none;             /* shown as flex when .is-open is added by JS */
+  display: none;
   flex-direction: column;
   background-color: #111;
   padding: var(--space-4) var(--space-6);
@@ -532,8 +506,6 @@ section {
   border-bottom: 1px solid var(--color-border);
 }
 .mobile-nav-link:hover { color: var(--color-orange); }
-
-/* Last item in mobile menu is a coloured CTA */
 .mobile-nav-cta {
   color: var(--color-orange);
   border-bottom: none;
@@ -541,25 +513,19 @@ section {
   font-weight: 700;
 }
 
-
 /*
    8. HERO SECTION
  */
-
 .hero {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-
-  width: 100%; /* explicit width prevents Android WebView clipping */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
-  /* REAL DOSMAC PROJECT PHOTO — artisan at 400V industrial switchgear.
-     background-attachment: scroll (not fixed) — fixed is broken on mobile. */
-  background-image: url('../images/hero-industrial-panel.jpg');
+  background-image: url('/assets/images/hero-industrial-panel.jpg');
   background-size: cover;
   background-position: center 30%; /* 30% focuses on the artisan in frame */
   background-attachment: scroll;
@@ -740,11 +706,9 @@ section {
   color: var(--color-text-secondary);
 }
 
-
 /*
    10. SERVICES SECTION
 */
-
 .services {
   background-color: var(--color-bg-alt);
 }
@@ -850,14 +814,10 @@ section {
   margin-top: auto;
 }
 
-
 /* 
    11. WHY DOSMAC SECTION
  */
-
 .why-dosmac { background-color: var(--color-bg); }
-
-/* Mobile base: single column, stacked; 2-col grid at 1024px+ */
 .why-dosmac__inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -957,11 +917,9 @@ section {
   line-height: 1.6;
 }
 
-
 /*
    12. TESTIMONIALS SECTION
 */
-
 .testimonials { background-color: var(--color-bg-alt); }
 
 /* Mobile base: single column; 2-col at 768px+; 3-col at 1024px+ */
@@ -1032,12 +990,9 @@ section {
   color: var(--color-text-muted);
   margin-top: 2px;
 }
-
-
 /*
    13. PORTFOLIO SECTION
 */
-
 .portfolio { background-color: var(--color-bg); }
 .portfolio__tabs {
   display: flex;
@@ -1138,11 +1093,9 @@ section {
   line-height: 1.5;
 }
 
-
 /*
    14. CONTACT SECTION
 */
-
 .contact {
   background-color: var(--color-bg-alt);
   /* Contain any child element that might overflow on narrow viewports */
@@ -1342,7 +1295,6 @@ section {
   color: #FF5555;
 }
 
-
 /*
    15. FOOTER
  */
@@ -1350,11 +1302,6 @@ section {
 .footer {
   background-color: #0D0D0D;
 }
-
-/* Safety-net padding applied directly to the footer so content never
-   touches the screen edge, regardless of inner .container usage in HTML.
-   Matches the base .container padding of var(--space-5) on mobile,
-   then overridden to 0 at 768px+ where .container handles horizontal spacing. */
 .footer__top,
 .footer__bottom {
   padding-left: var(--space-5);
@@ -1459,7 +1406,6 @@ section {
   color: var(--color-text-muted);
 }
 
-
 /* 
    16. FLOATING WHATSAPP BUTTON (FAB)
    Fixed to bottom-right of screen. Always visible.
@@ -1512,7 +1458,6 @@ section {
   transform: translateX(0);
 }
 
-
 /* 
    17. ANIMATIONS & KEYFRAMES
 */
@@ -1530,21 +1475,8 @@ section {
   100% { box-shadow: 0 0 0  0   rgba(37,211,102,0); }
 }
 
-
 /*
    18. MEDIA QUERIES — Mobile First (min-width)
-   Base styles above target small mobile (< 480px).
-   Each breakpoint progressively enhances the layout upward.
-
-   Breakpoints:
-     480px  → mobile         (restore trust-badge, fab size, tabs)
-     768px  → tablet         (2-col services, testimonials, portfolio,
-                               form-row, hero cta row, footer bottom row)
-    1024px  → desktop        (4-col stats, 3-col testimonials/portfolio,
-                               2-col why/contact/footer, show nav links)
-*/
-
-
 /*480px and up */
 @media (min-width: 480px) {
 
@@ -1591,7 +1523,6 @@ section {
   /* WhatsApp FAB: restore full size */
   .whatsapp-fab { width: 60px; height: 60px; font-size: 1.75rem; }
 }
-
 
 /*768px and up */
 @media (min-width: 768px) {
@@ -1673,7 +1604,6 @@ section {
   /* WhatsApp FAB: move further from screen edge */
   .whatsapp-fab { bottom: var(--space-8); right: var(--space-8); }
 }
-
 
 /* 1024px and up  */
 @media (min-width: 1024px) {
