@@ -1,51 +1,46 @@
 /*
-╔══════════════════════════════════════════════════════════════════════╗
-║  PROJECT   :  Dosmac Electrical — Main Stylesheet                   ║
-║  FILE      :  assets/css/styles.css                                 ║
-║  VERSION   :  3.0 (Production — Mobile First)                       ║
-╠══════════════════════════════════════════════════════════════════════╣
-║  TABLE OF CONTENTS                                                   ║
-║  1.  CSS Custom Properties (Design Tokens)                           ║
-║  2.  CSS Reset & Base Styles                                         ║
-║  3.  Utility Classes                                                 ║
-║  4.  Typography Scale                                                ║
-║  5.  Layout — Container & Section Headers                            ║
-║  6.  Buttons                                                         ║
-║  7.  Navbar                                                          ║
-║  8.  Hero Section                                                    ║
-║  9.  Stats Bar                                                       ║
-║  10. Services Section                                                ║
-║  11. Why Dosmac Section                                              ║
-║  12. Testimonials Section                                            ║
-║  13. Portfolio Section                                               ║
-║  14. Contact Section                                                 ║
-║  15. Footer                                                          ║
-║  16. Floating WhatsApp Button                                        ║
-║  17. Animations & Keyframes                                          ║
-║  18. Media Queries (Mobile First — min-width)                        ║
-╠══════════════════════════════════════════════════════════════════════╣
-║  BRAND COLOURS                                                       ║
-║  Orange  #E8560A  → primary CTAs, highlights, brand accent          ║
-║  Blue    #1A6BCC  → trust, links, secondary CTAs                    ║
-║  Dark    #1A1A1A  → page background                                 ║
-║  Green   #25D366  → WhatsApp only (do not use for other things)     ║
-╠══════════════════════════════════════════════════════════════════════╣
-║  RESPONSIVE STRATEGY — MOBILE FIRST                                  ║
-║  Base styles target small mobile (< 480px).                          ║
-║  min-width queries progressively enhance the layout:                 ║
-║    480px  → mobile                                                   ║
-║    768px  → tablet                                                   ║
-║   1024px  → desktop                                                  ║
-╚══════════════════════════════════════════════════════════════════════╝
+PROJECT   :  Dosmac Electrical — Main Stylesheet
+FILE      :  assets/css/styles.css
+VERSION   :  3.0 (Production — Mobile First)
+TABLE OF CONTENTS
+1.  CSS Custom Properties (Design Tokens)
+3.  Utility Classes
+4.  Typography Scale
+5.  Layout — Container & Section Headers
+6.  Buttons
+7.  Navbar
+8.  Hero Section
+9.  Stats Bar
+10. Services Section
+11. Why Dosmac Section
+12. Testimonials Section
+13. Portfolio Section
+14. Contact Section
+15. Footer
+16. Floating WhatsApp Button
+17. Animations & Keyframes
+18. Media Queries (Mobile First — min-width)
+
+BRAND COLOURS
+Orange  #E8560A  → primary CTAs, highlights, brand accent
+Blue    #1A6BCC  → trust, links, secondary CTAs
+Dark    #1A1A1A  → page background
+Green   #25D366  → WhatsApp only (do not use for other things)  
+
+RESPONSIVE STRATEGY — MOBILE FIRST
+Base styles target small mobile (< 480px)
+min-width queries progressively enhance the layout:
+    480px  → mobile 
+    768px  → tablet   
+   1024px  → desktop 
 */
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    1. CSS CUSTOM PROPERTIES — Design Tokens
-   ───────────────────────────────────────────────────────────────
    All brand values live here. Change once, updates everywhere.
    :root makes them available to every element on the page.
-═══════════════════════════════════════════════════════════════ */
+ */
 :root {
 
   /* Brand Colours */
@@ -123,16 +118,13 @@
   --transition-slow: 0.4s ease;
 }
 
-
-/* ═══════════════════════════════════════════════════════════════
+/* 
    2. CSS RESET & BASE STYLES
-   ───────────────────────────────────────────────────────────────
    Normalises browser defaults so the site looks consistent
    across Chrome, Firefox, Safari, Edge, and mobile browsers.
-═══════════════════════════════════════════════════════════════ */
+*/
 
-/* box-sizing: border-box makes width/height calculations
-   include padding and border, not add to them. Sanest default. */
+
 *,
 *::before,
 *::after {
@@ -152,8 +144,8 @@ select,
 textarea,
 button {
   box-sizing: border-box;
-  max-width: 100%;   /* hard cap — input can never exceed its container */
-  min-width: 0;      /* override UA min-width so inputs can shrink inside grids */
+  max-width: 100%;   
+  min-width: 0;
 }
 
 html {
@@ -222,11 +214,10 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    3. UTILITY CLASSES
-   ───────────────────────────────────────────────────────────────
    Single-purpose classes used inline in HTML.
-═══════════════════════════════════════════════════════════════ */
+ */
 
 /* Colour utilities */
 .text--orange { color: var(--color-orange); }
@@ -245,11 +236,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   4. TYPOGRAPHY SCALE
-   ───────────────────────────────────────────────────────────────
+/* 4. TYPOGRAPHY SCALE
    Shared text styles used across multiple sections.
-═══════════════════════════════════════════════════════════════ */
+*/
 
 /* Eyebrow: small uppercase label above section headings */
 .section-eyebrow {
@@ -291,9 +280,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    5. LAYOUT — Container & Section Headers
-═══════════════════════════════════════════════════════════════ */
+ */
 
 /* .container: centres content and caps max width.
    Mobile base uses comfortable horizontal padding; scaled up at 768px. */
@@ -301,7 +290,7 @@ section {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-5); /* 20px — gives breathing room on narrow screens */
+  padding: 0 var(--space-5);
 }
 
 /* .section-header: centred block containing eyebrow + title + subtitle */
@@ -312,15 +301,14 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    6. BUTTONS
-   ───────────────────────────────────────────────────────────────
    Base class: .btn
    Variants:   .btn--primary  (blue fill)
                .btn--whatsapp (green fill)
                .btn--outline  (transparent + orange border)
    Sizes:      .btn--sm  .btn--md  .btn--lg  .btn--full
-═══════════════════════════════════════════════════════════════ */
+*/
 
 .btn {
   display: inline-flex;
@@ -393,12 +381,10 @@ section {
 .btn--outline:active { transform: translateY(0); }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    7. NAVBAR
-   ───────────────────────────────────────────────────────────────
    Fixed to top. Starts transparent, becomes solid on scroll.
-   JS adds .navbar--scrolled class at 80px scroll depth.
-═══════════════════════════════════════════════════════════════ */
+   JS adds .navbar--scrolled class at 80px scroll depth. */
 /* Update your existing .navbar__logo block */
 .navbar__logo {
   font-family: var(--font-heading);
@@ -556,28 +542,12 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    8. HERO SECTION
-   ───────────────────────────────────────────────────────────────
-   Full-viewport height opening section.
-
-   Background image: assets/images/hero-industrial-panel.jpg
-   (Real Dosmac project: artisan in red overalls at 400V
-   Hager industrial switchgear, red brick wall, multiple
-   armoured cable feeds running into panel.)
-
-   IMPORTANT — background-attachment: fixed is BROKEN on
-   iOS Safari and most Android browsers. It causes the
-   background to paint in the wrong position. ALWAYS use
-   background-attachment: scroll on mobile.
-═══════════════════════════════════════════════════════════════ */
+ */
 
 .hero {
   position: relative;
-
-  /* 100svh = "small viewport height" — excludes the mobile browser
-     address bar from the calculation. Falls back to 100vh on older
-     browsers that don't support svh units. */
   min-height: 100vh;
   min-height: 100svh;
 
@@ -709,14 +679,9 @@ section {
 .hero__scroll-indicator:hover { color: var(--color-orange); }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    9. STATS BAR
-   ───────────────────────────────────────────────────────────────
-   4 animated counters.
-   Mobile base: 2×2 grid. Desktop: 4-col row.
-   Counters animate when section scrolls into view (JS).
-═══════════════════════════════════════════════════════════════ */
-
+*/
 .stats-bar {
   padding: var(--space-12) 0;
   background-color: #111;
@@ -776,12 +741,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    10. SERVICES SECTION
-   ───────────────────────────────────────────────────────────────
-   Single column on mobile; 2-col at 768px+.
-   Solar card (.service-card--featured) has orange accent border.
-═══════════════════════════════════════════════════════════════ */
+*/
 
 .services {
   background-color: var(--color-bg-alt);
@@ -889,13 +851,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    11. WHY DOSMAC SECTION
-   ───────────────────────────────────────────────────────────────
-   Single column on mobile; two-column grid at 1024px+.
-   Photo: Dosmac team on rooftop solar install, Harare.
-   File: assets/images/about-team-solar-install.jpg
-═══════════════════════════════════════════════════════════════ */
+ */
 
 .why-dosmac { background-color: var(--color-bg); }
 
@@ -1000,9 +958,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    12. TESTIMONIALS SECTION
-═══════════════════════════════════════════════════════════════ */
+*/
 
 .testimonials { background-color: var(--color-bg-alt); }
 
@@ -1076,19 +1034,11 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    13. PORTFOLIO SECTION
-   ───────────────────────────────────────────────────────────────
-   Filter tabs + image grid with overlay.
-   Mobile: single column, tabs scroll horizontally, overlay always visible.
-   Tablet: 2-col. Desktop: 3-col, overlay on hover only.
-═══════════════════════════════════════════════════════════════ */
+*/
 
 .portfolio { background-color: var(--color-bg); }
-
-/* Mobile base: horizontal scroll for tabs on small screens.
-   Scrollbar hidden via ::-webkit-scrollbar and scrollbar-width.
-   480px+ restores wrapping behaviour. */
 .portfolio__tabs {
   display: flex;
   flex-wrap: nowrap;
@@ -1189,9 +1139,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    14. CONTACT SECTION
-═══════════════════════════════════════════════════════════════ */
+*/
 
 .contact {
   background-color: var(--color-bg-alt);
@@ -1393,9 +1343,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    15. FOOTER
-═══════════════════════════════════════════════════════════════ */
+ */
 
 .footer {
   background-color: #0D0D0D;
@@ -1510,12 +1460,11 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    16. FLOATING WHATSAPP BUTTON (FAB)
-   ───────────────────────────────────────────────────────────────
    Fixed to bottom-right of screen. Always visible.
    Pulses via @keyframes pulse to attract attention.
-═══════════════════════════════════════════════════════════════ */
+*/
 
 /* Mobile base: smaller button, closer to edge */
 .whatsapp-fab {
@@ -1564,9 +1513,9 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/* 
    17. ANIMATIONS & KEYFRAMES
-═══════════════════════════════════════════════════════════════ */
+*/
 
 /* Bounce: used on hero scroll indicator arrow */
 @keyframes bounce {
@@ -1582,9 +1531,8 @@ section {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
+/*
    18. MEDIA QUERIES — Mobile First (min-width)
-   ───────────────────────────────────────────────────────────────
    Base styles above target small mobile (< 480px).
    Each breakpoint progressively enhances the layout upward.
 
@@ -1594,10 +1542,10 @@ section {
                                form-row, hero cta row, footer bottom row)
     1024px  → desktop        (4-col stats, 3-col testimonials/portfolio,
                                2-col why/contact/footer, show nav links)
-═══════════════════════════════════════════════════════════════ */
+*/
 
 
-/* ── 480px and up ─────────────────────────────────────────── */
+/*480px and up */
 @media (min-width: 480px) {
 
   /* Buttons: restore nowrap now that screens are wide enough for short labels */
@@ -1645,7 +1593,7 @@ section {
 }
 
 
-/* ── 768px and up ─────────────────────────────────────────── */
+/*768px and up */
 @media (min-width: 768px) {
 
   /* Section: full desktop spacing */
@@ -1727,7 +1675,7 @@ section {
 }
 
 
-/* ── 1024px and up ─────────────────────────────────────────── */
+/* 1024px and up  */
 @media (min-width: 1024px) {
 
   /* Increase navbar height for desktop */
