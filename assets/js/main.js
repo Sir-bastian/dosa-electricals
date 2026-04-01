@@ -105,20 +105,11 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#' || !document.querySelector(targetId)) return;
       
-      const targetEl = document.querySelector(targetId);
-      if (!targetEl) return;
-
-      e.preventDefault();
-      const navbar = document.getElementById('navbar');
-      const offset = navbar ? navbar.offsetHeight : 70;
-      const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+      // We don't need to preventDefault or do math anymore. 
+      // The browser and CSS will handle the scroll automatically.
+      // This makes the 'Interaction' almost 0ms.
     });
   });
 }

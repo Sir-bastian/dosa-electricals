@@ -160,9 +160,10 @@ html {
   /* smooth-scroll makes anchor links (#section) animate instead of jump */
   scroll-behavior: smooth;
   /* scroll-padding-top accounts for the fixed navbar when jumping to a section */
-  scroll-padding-top: var(--navbar-height);
+  scroll-padding-top: 80px; /* Match your CONFIG.NAVBAR_SCROLL_THRESHOLD */
   /* Prevent iOS from increasing font size in landscape mode */
   -webkit-text-size-adjust: 100%;
+
 }
 
 /* Prevent horizontal overflow on any screen size */
