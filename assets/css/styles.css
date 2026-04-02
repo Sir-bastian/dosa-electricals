@@ -34,6 +34,37 @@ min-width queries progressively enhance the layout:
     768px  → tablet   
    1024px  → desktop 
 */
+/* MONTSERRAT - For Headings */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/assets/fonts/montserrat-v31-latin/montserrat-v31-latin-900.woff2') format('woff2');
+}
+
+/* INTER - For Body Text */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter-v20-latin/inter-v20-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/inter-v20-latin/inter-v20-latin-600.woff2') format('woff2');
+}
 
 /* 
    1. CSS CUSTOM PROPERTIES — Design Tokens
